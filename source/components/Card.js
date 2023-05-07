@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
 const Card = ({ children, style, title, btn,btnStyle ,btnTextStyle,onPress}) => {
@@ -46,9 +46,14 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.17,
         shadowRadius: 3.05,
-        elevation: 4,
+        elevation: 3,
         backgroundColor: "#fff",
         borderBottomRightRadius: 10,
-        borderBottomLeftRadius: 10
+        borderBottomLeftRadius: 10,
+        // elevation:1,
+        marginHorizontal:Platform.OS=='android'?2:0
+        // backgroundColor:"red",
+        // borderWidth:1
+
     }
 })

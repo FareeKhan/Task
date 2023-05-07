@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
@@ -176,8 +176,8 @@ const Index = () => {
                                 data.map((item, index) => {
                                     return (
                                         <View key={index} style={styles.dataContainer}>
-                                            <Text style={{ fontSize: 12, fontWeight: '300' }}>{item.title}</Text>
-                                            <Text style={{ fontSize: 13 }}>{item.name}</Text>
+                                            <Text style={{ fontSize: 12,fontWeight:Platform.OS=='android'?'400':'300',color:"#00000099"}}>{item.title}</Text>
+                                            <Text style={{ fontSize: 13,color:"#000" }}>{item.name}</Text>
                                         </View>
                                     )
                                 })
@@ -198,8 +198,8 @@ const Index = () => {
                                 requestData.map((item, index) => {
                                     return (
                                         <View key={index} style={styles.dataContainer}>
-                                            <Text style={{ fontSize: 12, fontWeight: '300' }}>{item.title}</Text>
-                                            <Text style={{ fontSize: 13 }}>{item.name}</Text>
+                                            <Text style={{ fontSize: 12,color:"#00000099"  }}>{item.title}</Text>
+                                            <Text style={{ fontSize: 13,color:"#000" }}>{item.name}</Text>
                                         </View>
                                     )
                                 })
@@ -245,7 +245,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 15,
         borderRadius: 10,
         marginRight: 20,
-        marginTop: 20
+        marginTop: 20,
+        elevation:10
     },
     cardImg: {
         width: 90,
@@ -254,7 +255,8 @@ const styles = StyleSheet.create({
     },
     cardTitle: {
         fontWeight: "500",
-        fontSize: 15
+        fontSize: 15,
+        color:"#000"
     },
     cardNumber: {
         flexDirection: "row",
@@ -291,7 +293,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         paddingVertical: 8,
-        paddingHorizontal: 10
+        marginHorizontal: 10
     }
 
 

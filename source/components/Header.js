@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         backgroundColor: "#f3f3f3",
         paddingHorizontal: 15,
-        paddingTop: Platform.OS == 'ios' ? 45 : 20,
+        paddingTop: Platform.OS == 'ios' ? 45 : 15,
         paddingBottom:20
     },
     title: {

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Platform, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -25,7 +25,7 @@ const ThreeItems = ({ iconName, status, title, iconCommunity }) => {
 
 
             }
-            <Text style={{ fontSize: 12, marginTop: 7 }}>{status}</Text>
+            <Text style={{ fontSize: 12, marginTop: 7 ,color:"#000",fontWeight:Platform.OS=='android'?'500':'400'}}>{status}</Text>
             <Text style={{ fontSize: 10, color: "#787878", marginTop: 4 }}>{title}</Text>
         </View>
     )
